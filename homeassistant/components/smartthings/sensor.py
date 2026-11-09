@@ -25,6 +25,7 @@ from homeassistant.const import (
     UnitOfPressure,
     UnitOfRatio,
     UnitOfTemperature,
+    UnitOfTime,
     UnitOfVolume,
     UnitOfVolumeFlowRate,
 )
@@ -1233,6 +1234,18 @@ CAPABILITY_TO_SENSORS: dict[
                 },
             )
         ],
+        Attribute.REMAINING_TIME: [
+            SmartThingsSensorEntityDescription(
+                key=Attribute.REMAINING_TIME,
+                translation_key="remaining_time",
+                device_class=SensorDeviceClass.DURATION,
+                native_unit_of_measurement=UnitOfTime.MINUTES,
+                component_fn=lambda component: component == "sub",
+                component_translation_key={
+                    "sub": "washer_sub_remaining_time",
+                },
+            )
+        ],
     },
     Capability.SAMSUNG_CE_WATER_CONSUMPTION_REPORT: {
         Attribute.WATER_CONSUMPTION: [
@@ -1253,6 +1266,14 @@ CAPABILITY_TO_SENSORS: dict[
                 translation_key="dryer_progress",
                 state_class=SensorStateClass.MEASUREMENT,
                 native_unit_of_measurement=UnitOfRatio.PERCENTAGE,
+            )
+        ],
+        Attribute.REMAINING_TIME: [
+            SmartThingsSensorEntityDescription(
+                key=Attribute.REMAINING_TIME,
+                translation_key="remaining_time",
+                device_class=SensorDeviceClass.DURATION,
+                native_unit_of_measurement=UnitOfTime.MINUTES,
             )
         ],
     },

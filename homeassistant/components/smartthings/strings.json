@@ -880,6 +880,9 @@
       "refrigeration_setpoint": {
         "name": "[%key:component::smartthings::entity::sensor::oven_setpoint::name%]"
       },
+      "remaining_time": {
+        "name": "Remaining time"
+      },
       "robot_cleaner_cleaning_mode": {
         "name": "Cleaning mode",
         "state": {
@@ -1036,6 +1039,9 @@
       },
       "washer_sub_progress": {
         "name": "Upper washer progress"
+      },
+      "washer_sub_remaining_time": {
+        "name": "Upper washer remaining time"
       },
       "water_consumption": {
         "name": "Water consumption"
